@@ -1,5 +1,5 @@
 
-import inquirer, re, csv
+import inquirer, re, csv, sys
 from termcolor import colored
 
 class Sequence:
@@ -97,7 +97,7 @@ class Enzymes:
     Purpose:
     --------
         Manages the full lifecycle of enzyme selection — presenting a
-        terminal UI for the user to choose enzymes, then reading the
+        terminal UI for the user to choose enzymes (Optional), then reading the
         CSV database and filtering it down to only the selected entries.
 
     Attributes:
@@ -119,7 +119,7 @@ class Enzymes:
             Prints a styled application header to the terminal using colored
             text to visually introduce the TUI (terminal user interface).
         """
-        print(colored("\nREcut: Plasmid Sequence Cutting Tool\n", 'cyan', on_color='on_dark_grey', attrs=[ 'blink']))
+        sys.stdout.write(colored("\nPlasMap: Plasmid Sequence Annotation Tool\n", 'cyan', on_color='on_dark_grey'))
 
     def interface(self, enzymes, interface) -> None:
         """

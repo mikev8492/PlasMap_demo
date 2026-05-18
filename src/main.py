@@ -49,7 +49,7 @@ def create_parser() -> argparse.Namespace:
     --------
         Defines CLI arguments for the program
     '''
-    motif_parser = argparse.ArgumentParser(description="REcut: Plasmid Sequence Cutting Tool - Generates an annotated plasmid map with restriction enzyme cut sites.",
+    motif_parser = argparse.ArgumentParser(description="PlasMap: Plasmid Sequence Annotation Tool - Generates an annotated plasmid map with labelled restriction enzyme cut sites.",
     formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
 
@@ -76,7 +76,7 @@ def create_parser() -> argparse.Namespace:
         "-e", "--enzymes",
         nargs="+",
         default=DEFAULT_ENZYMES,
-        help="List of restriction enzyme names to map to plasmid sequence. Refer to src/database/enzymes.csv for exact enzyme name format."
+        help="List of restriction enzyme names to map to plasmid sequence. Refer to src/database/enzymes.csv for full enzyme list. \nExample: [-e EcoRI NdeII]"
     )
 
     motif_parser.add_argument(
